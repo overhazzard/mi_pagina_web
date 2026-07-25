@@ -71,26 +71,215 @@
     flex: 0 0 100%;
     width: 100%;
   }
+  
+  @keyframes anim-up {
+    from {
+      opacity: 0;
+      transform: translateY(80px);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+  
+  @keyframes anim-left {
+    from {
+      opacity: 0;
+      transform: translateX(100px);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+  
+  @keyframes anim-right {
+    from {
+      opacity: 0;
+      transform: translateX(-100px);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+  
+  [data-anim].is-waiting {
+    opacity: 0;
+  }
+  
+  [data-anim="fade-up"].is-waiting {
+    transform: translateY(80px);
+  }
+  
+  [data-anim="fade-left"].is-waiting {
+    transform: translateX(100px);
+  }
+  
+  [data-anim="fade-right"].is-waiting {
+    transform: translateX(-100px);
+  }
+  
+  [data-anim="fade-up"].is-visible {
+    animation: anim-up 1.2s cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+  
+  [data-anim="fade-left"].is-visible {
+    animation: anim-left 1.2s cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+  
+  [data-anim="fade-right"].is-visible {
+    animation: anim-right 1.2s cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+  
+  [data-anim].is-visible[data-delay="1"] {
+    animation-delay: 130ms;
+  }
+  
+  [data-anim].is-visible[data-delay="2"] {
+    animation-delay: 260ms;
+  }
+  
+  [data-anim].is-visible[data-delay="3"] {
+    animation-delay: 390ms;
+  }
+  
+  /* Input Focus Glow Animation */
+  @keyframes input-glow {
+    0% {
+      box-shadow: 0 0 0 0 rgba(0, 54, 163, 0.4);
+    }
+    50% {
+      box-shadow: 0 0 0 8px rgba(0, 54, 163, 0.2);
+    }
+    100% {
+      box-shadow: 0 0 0 12px rgba(0, 54, 163, 0);
+    }
+  }
+  
+  input:focus,
+  textarea:focus {
+    animation: input-glow 0.6s ease-out;
+  }
+  
+  /* Button Ripple Effect */
+  @keyframes ripple {
+    0% {
+      transform: scale(0);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(4);
+      opacity: 0;
+    }
+  }
+  
+  .btn-ripple {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .btn-ripple::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 5px;
+    height: 5px;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+  }
+  
+  .btn-ripple:hover::after {
+    animation: ripple 0.6s ease-out;
+  }
+  
+  /* WhatsApp Floating Button */
+  @keyframes pulse-float {
+    0%, 100% {
+      transform: scale(1);
+      box-shadow: 0 4px 12px rgba(0, 54, 163, 0.3);
+    }
+    50% {
+      transform: scale(1.08);
+      box-shadow: 0 8px 20px rgba(0, 54, 163, 0.4);
+    }
+  }
+  
+  .whatsapp-button {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 56px;
+    height: 56px;
+    background-color: #1a1b22;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    text-decoration: none;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+    z-index: 40;
+    transition: all 0.3s ease;
+    animation: pulse-float 2s ease-in-out infinite;
+  }
+  
+  .whatsapp-button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+    animation: none;
+  }
+  
+  .whatsapp-button span {
+    color: white;
+    font-size: 28px;
+  }
+  
+
+  @media (max-width: 768px) {
+    .whatsapp-button {
+      bottom: 20px;
+      right: 20px;
+      width: 48px;
+      height: 48px;
+    }
+    
+    .whatsapp-button span {
+      font-size: 24px;
+    }
+  }
 </style>
 </head><body class="font-body-md text-body-md">
 <!-- TopNavBar -->
 <nav class="w-full sticky top-0 z-50 bg-surface border-b border-outline-variant">
 <div class="flex justify-between items-center h-20 px-margin-desktop max-w-container-max mx-auto">
-<div class="text-headline-md font-headline-md font-black text-on-surface">Espresso Arch</div>
+<a href="#" id="brand-link" class="text-headline-md font-headline-md font-black text-on-surface cursor-pointer hover:opacity-80 transition-opacity">Espresso Arch</a>
 <div class="hidden md:flex gap-8 items-center">
-<a class="font-label-md text-label-md text-primary border-b-2 border-primary pb-1 transition-colors duration-200" href="#">Herencia</a>
-<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors duration-200" href="#">Catálogo</a>
-<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors duration-200" href="#">Ubicaciones</a>
-<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors duration-200" href="#">Contacto</a>
+<a class="font-label-md text-label-md text-primary border-b-2 border-primary pb-1 transition-colors duration-200" href="#herencia">Herencia</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors duration-200" href="#catalogo">Catálogo</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors duration-200" href="#ubicaciones">Ubicaciones</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors duration-200" href="#contacto">Contacto</a>
 </div>
 <div class="flex items-center gap-6">
-<a href="https://wa.me/51999999999" target="_blank" rel="noopener" class="hidden lg:flex items-center gap-2 text-on-surface-variant hover:text-primary transition-colors duration-200">
-<span class="material-symbols-outlined text-[20px]">chat</span>
-<span class="font-label-md text-label-md">+51 999 999 999</span>
-</a>
 <button class="border border-on-surface text-on-surface px-6 py-3 font-label-md text-label-md hover:bg-on-surface hover:text-surface transition-all duration-200 active:opacity-70 cursor-pointer">
                 Pedir ahora
             </button>
+<button id="menu-toggle" class="md:hidden flex items-center text-on-surface cursor-pointer">
+<span class="material-symbols-outlined text-[24px]">menu</span>
+</button>
+</div>
+</div>
+<!-- Mobile Menu -->
+<div id="mobile-menu" class="hidden md:hidden bg-surface border-b border-outline-variant">
+<div class="flex flex-col px-margin-desktop py-4 gap-4">
+<a class="font-label-md text-label-md text-primary transition-colors duration-200" href="#herencia">Herencia</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors duration-200" href="#catalogo">Catálogo</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors duration-200" href="#ubicaciones">Ubicaciones</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors duration-200" href="#contacto">Contacto</a>
 </div>
 </div>
 </nav>
@@ -116,7 +305,7 @@
 </div>
 </header>
 <!-- Brand Section: Nuestra Herencia -->
-<section class="bg-surface py-section-gap">
+<section id="herencia" class="bg-surface py-section-gap" data-anim="fade-up">
 <div class="max-w-container-max mx-auto px-margin-desktop">
 <div class="flex flex-col md:flex-row gap-16 items-start">
 <div class="md:w-1/3">
@@ -147,7 +336,7 @@
 </div>
 </section>
 <!-- Catalog Section: Catálogo de Especialidades -->
-<section class="bg-white py-section-gap">
+<section id="catalogo" class="bg-white py-section-gap" data-anim="fade-up">
 <div class="max-w-container-max mx-auto px-margin-desktop">
 <div class="flex justify-between items-end mb-16 border-b border-outline-variant pb-8">
 <h2 class="font-headline-lg text-headline-lg text-on-surface">Catálogo de Especialidades</h2>
@@ -155,7 +344,7 @@
 </div>
 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
 <!-- Item 1 -->
-<div class="group border border-outline-variant hover:border-on-surface transition-colors duration-300">
+<div class="group border border-outline-variant hover:border-on-surface transition-colors duration-300" data-anim="fade-up" data-delay="1">
 <div class="aspect-square w-full relative overflow-hidden bg-surface-container-low">
 <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" alt="Fotografía de producto de un espresso" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDnoFGO0UPtVNOt31fhk0WE3_68ILhEwjgYywprHIrNRhR8MWjNpaE1_aJ6MzFkgqbzWqicJ9bI9wintEzEUYNMBFDK_HOGJYUBMktvAyEftDDjr95RMjWRCQMoos7I3DxLVLjOVLLaJgXVJEE1xJgERwcQNBnyyyGKo_8bLfnhNO7blIqARCnKukaeyCw8JsbI76Nf_r08LTayWbkpsGaz_LLauz_U_P3D_8nSGfYcebmzSA0D7vTM">
 </div>
@@ -173,7 +362,7 @@
 </div>
 </div>
 <!-- Item 2 -->
-<div class="group border border-outline-variant hover:border-on-surface transition-colors duration-300">
+<div class="group border border-outline-variant hover:border-on-surface transition-colors duration-300" data-anim="fade-up" data-delay="2">
 <div class="aspect-square w-full relative overflow-hidden bg-surface-container-low">
 <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" alt="Cappuccino con arte latte" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAxtokiRi0mb8cOBt2-O_sHeyWcjE6wbrm3Cx9yLp8LteCpd425Ak928B-hGSwM1lPTnDRw32estS8NR9KSxlV36NdlsZFvN_H1aYz1InTUUh5fLpn4DLG6fh8RXnZmpqlvqANJN4up-M0QK384QDEU49LkHjFs6HSvCBxPn85PH9iqiLO9S3xT-99otPBzMeQycSnLy1wrKJ_WfIejnhqfz2WYO9b55a4ZL_EKDqTXfa1y0jYYy-nb">
 </div>
@@ -191,7 +380,7 @@
 </div>
 </div>
 <!-- Item 3 -->
-<div class="group border border-outline-variant hover:border-on-surface transition-colors duration-300">
+<div class="group border border-outline-variant hover:border-on-surface transition-colors duration-300" data-anim="fade-up" data-delay="3">
 <div class="aspect-square w-full relative overflow-hidden bg-surface-container-low">
 <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" alt="Croissant hojaldrado sobre un plato minimalista" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDpQv2qZetdiCI0Mz1rHJCUVF677_ihE03GPZSy0wuqlsZaKoI-gKc99VRCEUGXS46d7dU5REWSV3X9AgtFwBtl00m9F_ihCRl2Iqj04wl910QU9XIVhyLujcUx7wIpI7yr1xdqm-d9sasd6DC5MqPp6-sZb4nFQH36mSOe-ol4ZmBqJLfzrUbFHtHGAh0qYKICy6gJDjwmyRDxLHpHWKp8e4gt0SSLbYtAQcLVun-ejjh4oCWkPIVo">
 </div>
@@ -208,16 +397,16 @@
 </div>
 </div>
 </div>
-<div class="flex justify-center mt-12">
-<button class="border border-on-surface text-on-surface px-8 py-3 font-label-md text-label-md hover:bg-on-surface hover:text-surface transition-all duration-200 active:opacity-70 cursor-pointer">
-                    Ver carta completa
-                </button>
 </div>
+<div class="flex justify-center mt-12">
+<a href="carta.html" class="border border-on-surface text-on-surface px-8 py-3 font-label-md text-label-md hover:bg-on-surface hover:text-surface transition-all duration-200 active:opacity-70 cursor-pointer btn-ripple inline-block text-center">
+                Ver carta completa
+            </a>
 </div>
 </div>
 </section>
 <!-- Locations Section: Ubicaciones -->
-<section class="bg-surface py-section-gap border-t border-outline-variant">
+<section id="ubicaciones" class="bg-surface py-section-gap border-t border-outline-variant" data-anim="fade-up">
 <div class="max-w-container-max mx-auto px-margin-desktop">
 <div class="flex justify-between items-end mb-16 border-b border-outline-variant pb-8">
 <h2 class="font-headline-lg text-headline-lg text-on-surface uppercase tracking-tight">Ubicaciones</h2>
@@ -247,7 +436,7 @@
 </div>
 </section>
 <!-- Testimonials Section: Opiniones (Slider) -->
-<section class="bg-white py-section-gap border-t border-outline-variant overflow-hidden">
+<section class="bg-white py-section-gap border-t border-outline-variant overflow-hidden" data-anim="fade-up">
 <div class="max-w-container-max mx-auto px-margin-desktop">
 <div class="flex justify-between items-center mb-16">
 <h2 class="font-headline-lg text-headline-lg text-on-surface uppercase tracking-tight">Opiniones</h2>
@@ -263,7 +452,7 @@
 <div class="testimonial-slider-container">
 <div class="testimonial-track" id="testimonial-track">
 <!-- Testimonial 1 -->
-<div class="testimonial-slide active">
+<div class="testimonial-slide active" data-anim="fade-up" data-delay="1">
 <div class="flex flex-col md:flex-row gap-12 items-center md:items-start max-w-4xl">
 <div class="w-32 h-32 md:w-48 md:h-48 flex-shrink-0">
 <img class="w-full h-full object-cover rounded-full" alt="Carlos Mendoza" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBvQKFcDO_qXs2jJ9dnWuaTFlIJp8mIu3-muOXCgkWYOXmehN0lNj6jFrVopM_XwmDmmAeYQCJRI1Fwnfr_CvzecazpEpVAcbL-RCTXX1T8Nm7L6vlvYZOaL24KUgi5tD8MLVKbkggDsdXUYwyl4KDO_opMLgnV0wUS_erKK0b98MTqvR2w7uKQBcNmeXyNi4V77wCuJ9Rm0wBSai_uHBvx504iTUFx5DFjE9wfy5p5uG6akMi-R7wu">
@@ -278,7 +467,7 @@
 </div>
 </div>
 <!-- Testimonial 2 -->
-<div class="testimonial-slide">
+<div class="testimonial-slide" data-anim="fade-up" data-delay="2">
 <div class="flex flex-col md:flex-row gap-12 items-center md:items-start max-w-4xl">
 <div class="w-32 h-32 md:w-48 md:h-48 flex-shrink-0">
 <img class="w-full h-full object-cover rounded-full" alt="Elena Rivas" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBh5EEXG8pyBzs4HKgu4w0fu8joyk1dHg4ZZHTMLgpP82yXWEHjnz9Zcm12vlQaRMHFUAyCZOXsOzmGtBwuJUR5JtZrZHpRoc2XFXPCvLaY_CQeLZxU6hj8cYaCJ2RuYnhfGGNiRn7rBXx2SHHBTDtLilCUVG6jbocQUqp6Q7EEpp8jxQ4CVtdSWT1OtHS01SZYLXLg9wGHLqAL-N_sophPeo6jNOSxRZxFOqBFndUUHFtdSvAKbUhN">
@@ -293,7 +482,7 @@
 </div>
 </div>
 <!-- Testimonial 3 -->
-<div class="testimonial-slide">
+<div class="testimonial-slide" data-anim="fade-up" data-delay="3">
 <div class="flex flex-col md:flex-row gap-12 items-center md:items-start max-w-4xl">
 <div class="w-32 h-32 md:w-48 md:h-48 flex-shrink-0">
 <img class="w-full h-full object-cover rounded-full" alt="Javier Ortiz" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD9BV4_m-YLg7Pncf3n6uTjlBqIWaAZqyD9qa66MoaE3-NKvzyJBGPPLH_ikKd9Y630wNflKYhd4GwzRLg1wzK8nIRTiQKzJvgt4bI7LQomR6NAdLKgg82Ug-88A-WPrTxiVgIFhn7cK_0ima4XDFbxuXG00AhWSZSvHAUDlCdpv59shFP9NFXAPXVUlYlZCd_-VAeVMVPPH8VsfmpoOD6kAvFQ9EON9-yC5qDsvn47oZ_W-6D04lSb">
@@ -317,14 +506,14 @@
 </div>
 </section>
 <!-- CTA Section -->
-<section class="bg-surface py-section-gap border-t border-outline-variant">
+<section id="contacto" class="bg-surface py-section-gap border-t border-outline-variant" data-anim="fade-up">
   <div class="max-w-container-max mx-auto px-margin-desktop">
     <div class="max-w-xl mx-auto">
       <div class="text-center mb-12">
         <h2 class="font-headline-lg text-headline-lg text-on-surface mb-4">Contáctanos</h2>
         <p class="font-body-lg text-body-lg text-on-surface-variant">¿Tienes alguna duda o quieres colaborar? Escríbenos.</p>
       </div>
-      <form class="flex flex-col gap-6">
+      <form action="https://formspree.io/f/mqadojpp" method="POST" class="flex flex-col gap-6">
         <div class="flex flex-col gap-2">
           <label for="name" class="font-label-md text-label-md text-on-surface">Nombre</label>
           <input type="text" id="name" name="name" placeholder="Tu nombre completo" class="w-full px-4 py-3 bg-surface border border-outline-variant focus:border-primary focus:ring-0 transition-colors font-body-md text-on-surface outline-none">
@@ -337,7 +526,7 @@
           <label for="message" class="font-label-md text-label-md text-on-surface">Mensaje</label>
           <textarea id="message" name="message" rows="4" placeholder="¿En qué podemos ayudarte?" class="w-full px-4 py-3 bg-surface border border-outline-variant focus:border-primary focus:ring-0 transition-colors font-body-md text-on-surface outline-none resize-none"></textarea>
         </div>
-        <button type="submit" class="bg-primary text-on-primary px-12 py-4 font-label-md text-label-md hover:bg-primary-dark transition-colors duration-200 active:scale-[0.98] mt-4">
+        <button type="submit" class="bg-primary text-on-primary px-12 py-4 font-label-md text-label-md hover:bg-primary-dark transition-colors duration-200 active:scale-[0.98] mt-4 btn-ripple">
           Enviar mensaje
         </button>
       </form>
@@ -363,6 +552,13 @@
 </div>
 </div>
 </footer>
+<!-- WhatsApp Floating Button -->
+<a href="https://wa.me/51999999999" target="_blank" rel="noopener" class="whatsapp-button" title="Contactanos por WhatsApp">
+<span class="material-symbols-outlined">chat</span>
+</a>
+
+
+
 <script>
         // Micro-interactions
         document.querySelectorAll('button:not(.slider-dot)').forEach(button => {
@@ -371,6 +567,30 @@
             });
             button.addEventListener('mouseleave', () => {
                 button.style.transform = 'translateY(0px)';
+            });
+        });
+
+        // Brand link to top
+        const brandLink = document.getElementById('brand-link');
+        if (brandLink) {
+            brandLink.addEventListener('click', (e) => {
+                e.preventDefault();
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        }
+
+        // Mobile Menu Toggle
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when a link is clicked
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
             });
         });
 
@@ -401,4 +621,33 @@
             currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
             updateSlider();
         });
+
+
+
+
+</script>
+
+<script>
+(function() {
+  var els = document.querySelectorAll('[data-anim]');
+  if (!els.length) return;
+  
+  els.forEach(function(el) {
+    el.classList.add('is-waiting');
+  });
+  
+  var obs = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.remove('is-waiting');
+        entry.target.classList.add('is-visible');
+        obs.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  
+  els.forEach(function(el) {
+    obs.observe(el);
+  });
+})();
 </script></body></html>

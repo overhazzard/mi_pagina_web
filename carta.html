@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&amp;family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        /* Custom scrollbar for minimalist feel */
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: #faf8ff; }
+        ::-webkit-scrollbar-thumb { background: #e4e4e7; }
+        ::-webkit-scrollbar-thumb:hover { background: #747685; }
+    </style>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "error": "#ba1a1a",
+                    "inverse-primary": "#b6c4ff",
+                    "secondary-fixed-dim": "#45e180",
+                    "on-surface": "#1a1b22",
+                    "on-primary-container": "#c2ceff",
+                    "primary-fixed-dim": "#b6c4ff",
+                    "inverse-surface": "#2f3038",
+                    "secondary-fixed": "#67fe9a",
+                    "primary-container": "#254fc2",
+                    "outline-variant": "#c4c5d6",
+                    "on-tertiary-container": "#ffc2a9",
+                    "outline": "#747685",
+                    "on-secondary": "#ffffff",
+                    "surface-container-lowest": "#ffffff",
+                    "on-secondary-container": "#007239",
+                    "on-surface-variant": "#434653",
+                    "tertiary-container": "#9a3a00",
+                    "surface-container-high": "#e8e7f1",
+                    "primary-fixed": "#dce1ff",
+                    "on-tertiary-fixed": "#360f00",
+                    "on-secondary-fixed": "#00210c",
+                    "on-tertiary-fixed-variant": "#7d2d00",
+                    "secondary": "#006d36",
+                    "on-primary": "#ffffff",
+                    "on-error-container": "#93000a",
+                    "primary": "#0036a3",
+                    "surface-tint": "#2d55c8",
+                    "on-background": "#1a1b22",
+                    "on-secondary-fixed-variant": "#005227",
+                    "error-container": "#ffdad6",
+                    "on-primary-fixed-variant": "#003baf",
+                    "surface": "#faf8ff",
+                    "surface-dim": "#dad9e3",
+                    "surface-container-highest": "#e2e1ec",
+                    "tertiary-fixed": "#ffdbcd",
+                    "surface-container": "#eeedf7",
+                    "surface-container-low": "#f3f2fd",
+                    "on-primary-fixed": "#00164f",
+                    "tertiary-fixed-dim": "#ffb596",
+                    "background": "#faf8ff",
+                    "inverse-on-surface": "#f1f0fa",
+                    "on-tertiary": "#ffffff",
+                    "surface-variant": "#e2e1ec",
+                    "on-error": "#ffffff",
+                    "secondary-container": "#64fb97",
+                    "tertiary": "#742a00",
+                    "surface-bright": "#faf8ff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "unit": "8px",
+                    "margin-desktop": "64px",
+                    "gutter": "24px",
+                    "container-max": "1280px",
+                    "section-gap": "128px",
+                    "margin-mobile": "24px"
+            },
+            "fontFamily": {
+                    "headline-lg-mobile": ["Fraunces", "serif"],
+                    "label-md": ["Inter"],
+                    "label-sm": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "headline-lg": ["Fraunces", "serif"],
+                    "headline-md": ["Fraunces", "serif"],
+                    "display": ["Fraunces", "serif"],
+                    "body-md": ["Inter"]
+            },
+            "fontSize": {
+                    "headline-lg-mobile": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                    "label-md": ["14px", {"lineHeight": "1.4", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                    "label-sm": ["12px", {"lineHeight": "1.4", "fontWeight": "400"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "headline-lg": ["40px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                    "display": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+</head>
+<body class="bg-surface text-on-surface">
+<!-- TopNavBar -->
+<nav class="w-full sticky top-0 z-50 bg-surface border-b border-outline-variant">
+<div class="flex justify-between items-center h-20 px-margin-desktop max-w-container-max mx-auto">
+<a href="index.html" id="brand-link" class="text-headline-md font-headline-md font-black text-on-surface cursor-pointer hover:opacity-80 transition-opacity">Espresso Arch</a>
+<div class="hidden md:flex gap-8 items-center">
+<a class="nav-link font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors duration-200" href="#especialidad" data-section="especialidad">Catálogo</a>
+<a class="nav-link font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors duration-200" href="#bolleria" data-section="bolleria">Bollería</a>
+<a class="nav-link font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors duration-200" href="#temporada" data-section="temporada">Bebidas</a>
+</div>
+<div class="flex items-center gap-6">
+<button class="border border-on-surface text-on-surface px-6 py-3 font-label-md text-label-md hover:bg-on-surface hover:text-surface transition-all duration-200 active:opacity-70 cursor-pointer">
+                Pedir ahora
+            </button>
+<button id="menu-toggle" class="md:hidden flex items-center text-on-surface cursor-pointer">
+<span class="material-symbols-outlined text-[24px]">menu</span>
+</button>
+</div>
+</div>
+<!-- Mobile Menu -->
+<div id="mobile-menu" class="hidden md:hidden bg-surface border-b border-outline-variant">
+<div class="flex flex-col px-margin-desktop py-4 gap-4">
+<a class="nav-link font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors duration-200" href="#especialidad" data-section="especialidad">Catálogo</a>
+<a class="nav-link font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors duration-200" href="#bolleria" data-section="bolleria">Bollería</a>
+<a class="nav-link font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors duration-200" href="#temporada" data-section="temporada">Bebidas</a>
+</div>
+</div>
+</nav>
+<!-- Hero Section -->
+<header class="bg-white py-section-gap border-b border-outline-variant">
+<div class="max-w-container-max mx-auto px-margin-desktop grid grid-cols-1 md:grid-cols-12 gap-gutter items-center">
+<div class="md:col-span-6 space-y-6">
+<h1 class="font-headline-lg text-headline-lg text-on-surface">Nuestra Carta</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">
+                Una selección curada de granos de origen único, procesos artesanales y repostería de autor.
+            </p>
+</div>
+<div class="md:col-span-6">
+<div class="aspect-[4/3] bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover" alt="Barista vertiendo latte art sobre una taza de café en un ambiente minimalista y luminoso" src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?q=80&amp;w=1200&amp;auto=format&amp;fit=crop"/>
+</div>
+</div>
+</div>
+</header>
+<!-- Menu Categories -->
+<div class="space-y-section-gap">
+<!-- Category: Café de Especialidad -->
+<section id="especialidad" class="bg-white py-section-gap">
+<div class="max-w-container-max mx-auto px-margin-desktop">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<div class="md:col-span-4">
+<h2 class="font-headline-md text-headline-md sticky top-32">Café de Especialidad</h2>
+</div>
+<div class="md:col-span-8 space-y-12">
+<div class="group border-b border-outline-variant pb-8 flex justify-between items-baseline">
+<div class="space-y-1">
+<h3 class="font-body-lg text-body-lg font-bold">V60 Single Origin</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Etiopía Guji, notas a jazmín y durazno, perfil limpio.</p>
+</div>
+<span class="font-label-md text-label-md text-primary-container">€6.50</span>
+</div>
+<div class="group border-b border-outline-variant pb-8 flex justify-between items-baseline">
+<div class="space-y-1">
+<h3 class="font-body-lg text-body-lg font-bold">Flat White</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Doble shot de espresso con microespuma sedosa.</p>
+</div>
+<span class="font-label-md text-label-md text-primary-container">€4.20</span>
+</div>
+<div class="group border-b border-outline-variant pb-8 flex justify-between items-baseline">
+<div class="space-y-1">
+<h3 class="font-body-lg text-body-lg font-bold">Cold Brew Nitro</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Infusión en frío por 18 horas, servido con nitrógeno.</p>
+</div>
+<span class="font-label-md text-label-md text-primary-container">€5.50</span>
+</div>
+<div class="group border-b border-outline-variant pb-8 flex justify-between items-baseline">
+<div class="space-y-1">
+<h3 class="font-body-lg text-body-lg font-bold">Espresso Tonic</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Tónica premium, hielo cristalino y un shot de origen.</p>
+</div>
+<span class="font-label-md text-label-md text-primary-container">€5.00</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Category: Bollería Artesanal -->
+<section id="bolleria" class="bg-surface py-section-gap border-t border-outline-variant">
+<div class="max-w-container-max mx-auto px-margin-desktop">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<div class="md:col-span-4">
+<h2 class="font-headline-md text-headline-md sticky top-32">Bollería Artesanal</h2>
+</div>
+<div class="md:col-span-8">
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
+<!-- Bento Card 1 -->
+<div class="border border-outline-variant p-8 space-y-6 bg-white transition-colors hover:bg-surface-container-low">
+<div class="aspect-square bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A high-end, minimalist close-up shot of a golden-brown flaky croissant on a white ceramic plate. The lighting is soft, architectural, and clean, highlighting the intricate layers of the pastry. The background is a neutral light gray, maintaining a sophisticated and premium bakery aesthetic that aligns with a modern specialty coffee shop." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAp72OGHvOCFiA6BUhJ5do-2kLeriVQrlHw7AjdjqXw8Lu-68ikuqwXPLmL8L5XK7KyFqaZK6RkHzeF-YJtiLs5ebXrScqht_DXGbiquWOMBE_1UGnArmIrXg9RZTCV2Vmyl4wiiLY5r82xVzyZ2vlI9LY8qrx_dH8Q0rBCrI4rAbFspEA1GrT1ipliaAxHaKBFo8tOuAutjpaJy2NKnaZkkCMi_Mk8HNKdS4S6V2HDDejj4yagA7qZ21QS90VYYI0T4-HksjYQD4g"/>
+</div>
+<div class="space-y-2">
+<div class="flex justify-between items-baseline">
+<h3 class="font-body-lg text-body-lg font-bold">Croissant de Mantequilla</h3>
+<span class="font-label-md text-label-md text-primary-container">€3.50</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">Fermentación de 48 horas con mantequilla francesa AOP.</p>
+</div>
+</div>
+<!-- Bento Card 2 -->
+<div class="border border-outline-variant p-8 space-y-6 bg-white transition-colors hover:bg-surface-container-low">
+<div class="aspect-square bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A professional studio photograph of a Swedish cinnamon bun, known as Kanelbulle, with pearl sugar on top. The composition is clean and centered against a minimalist off-white background. The lighting is crisp and even, emphasizing the texture of the dough and the glistening sugar, reflecting a high-end artisanal culinary style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBVROECgnx-6lZLbvI0Ki5s4aV1aoDBa7x8_OK0KBfE5yqHj0uUTzPGCuBrYVBUxwyMwFrqzDyoINdyFNvm4bTQgRddJEM8fH14h-B7CfRFpWzO-PTx6HbnoLFW0n0jv2rDfwwUekjiKnBJ2BRPYtbdNcnvhAVYE2NthCgjkGYAsLwfl9rdWTusw0y6Ttg2bsQyYtFlvrY0XJhDujjOhL9xwvzeE-QKcUOBkxXDuUcfUafZlMP45jfBVOnqpYKSgMhdqH7iu2TOg38"/>
+</div>
+<div class="space-y-2">
+<div class="flex justify-between items-baseline">
+<h3 class="font-body-lg text-body-lg font-bold">Roll de Canela y Cardamomo</h3>
+<span class="font-label-md text-label-md text-primary-container">€4.00</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">Estilo nórdico con especias recién molidas y glaseado ligero.</p>
+</div>
+</div>
+</div>
+<div class="mt-12 group border-b border-outline-variant pb-8 flex justify-between items-baseline">
+<div class="space-y-1">
+<h3 class="font-body-lg text-body-lg font-bold">Tostada de Masa Madre</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Aguacate, semillas de sésamo negro y aceite de oliva virgen.</p>
+</div>
+<span class="font-label-md text-label-md text-primary-container">€8.50</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Category: Bebidas de Temporada -->
+<section id="temporada" class="bg-white py-section-gap border-t border-outline-variant">
+<div class="max-w-container-max mx-auto px-margin-desktop">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<div class="md:col-span-4">
+<h2 class="font-headline-md text-headline-md sticky top-32">Bebidas de Temporada</h2>
+</div>
+<div class="md:col-span-8 space-y-12">
+<div class="group border-b border-outline-variant pb-8 flex justify-between items-baseline">
+<div class="space-y-1">
+<h3 class="font-body-lg text-body-lg font-bold">Iced Lavender Latte</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Espresso, leche de avena y sirope de lavanda orgánica.</p>
+</div>
+<span class="font-label-md text-label-md text-primary-container">€5.20</span>
+</div>
+<div class="group border-b border-outline-variant pb-8 flex justify-between items-baseline">
+<div class="space-y-1">
+<h3 class="font-body-lg text-body-lg font-bold">Matcha Ceremony Grade</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Matcha de Uji batido tradicionalmente, opción vegetal.</p>
+</div>
+<span class="font-label-md text-label-md text-primary-container">€5.80</span>
+</div>
+<div class="group border-b border-outline-variant pb-8 flex justify-between items-baseline">
+<div class="space-y-1">
+<h3 class="font-body-lg text-body-lg font-bold">Yuzu Cascara Fizz</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Infusión de cáscara de café con puré de yuzu y soda.</p>
+</div>
+<span class="font-label-md text-label-md text-primary-container">€5.50</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- Footer -->
+<footer class="w-full py-section-gap bg-surface border-t border-outline-variant">
+<div class="flex flex-col md:flex-row justify-between items-center px-margin-desktop max-w-container-max mx-auto gap-8">
+<div class="flex flex-col gap-4 items-center md:items-start">
+<div class="text-headline-md font-headline-md font-black text-on-surface">Espresso Arch</div>
+<p class="font-label-sm text-label-sm text-on-surface-variant">© 2024 Espresso Arch. Todos los derechos reservados.</p>
+</div>
+<div class="flex gap-8 items-center flex-wrap justify-center">
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Política de privacidad</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Términos de servicio</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Mayoreo</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Sostenibilidad</a>
+</div>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-on-surface-variant hover:text-primary cursor-pointer">language</span>
+<span class="material-symbols-outlined text-on-surface-variant hover:text-primary cursor-pointer">share</span>
+</div>
+</div>
+</footer>
+<script>
+        // Set first nav link as active by default
+        const navLinks = document.querySelectorAll('.nav-link');
+        if (navLinks.length > 0) {
+            navLinks[0].classList.remove('text-on-surface-variant');
+            navLinks[0].classList.add('text-primary', 'border-b-2', 'border-primary', 'pb-1');
+        }
+        
+        // Mobile Menu Toggle
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when a link is clicked
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+        
+        // Active nav link highlight
+        const navLinks2 = document.querySelectorAll('.nav-link');
+        
+        const sectionObserverOptions = {
+            threshold: 0.3
+        };
+        
+        const sectionObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const sectionId = entry.target.id;
+                    
+                    // Update all nav links
+                    navLinks2.forEach(link => {
+                        link.classList.remove('text-primary', 'border-b-2', 'border-primary', 'pb-1');
+                        link.classList.add('text-on-surface-variant');
+                    });
+                    
+                    // Highlight the active link
+                    const activeLink = document.querySelector(`[data-section="${sectionId}"]`);
+                    if (activeLink) {
+                        activeLink.classList.remove('text-on-surface-variant');
+                        activeLink.classList.add('text-primary', 'border-b-2', 'border-primary', 'pb-1');
+                    }
+                }
+            });
+        }, sectionObserverOptions);
+        
+        // Observe all sections
+        document.querySelectorAll('section').forEach(section => {
+            sectionObserver.observe(section);
+        });
+        
+        // Smooth scroll for anchors if needed
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Simple intersection observer for subtle fade-in
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100');
+                    entry.target.classList.remove('opacity-0', 'translate-y-4');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section').forEach(section => {
+            section.classList.add('transition-all', 'duration-1000', 'opacity-0', 'translate-y-4');
+            observer.observe(section);
+        });
+    </script>
+</body></html>
