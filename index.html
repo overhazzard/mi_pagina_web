@@ -1,259 +1,281 @@
-<!DOCTYPE html><html lang="es"><head><meta charset="utf-8">
-<meta content="width=device-width, initial-scale=1.0" name="viewport">
-<title>Espresso Arch — Café de especialidad en San Isidro, Lima</title>
-<meta name="description" content="Café de especialidad, granos de origen único y ambiente diseñado para profesionales, familias y visitantes en San Isidro, Lima."><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&amp;family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&amp;display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=block" rel="stylesheet"><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script><script id="tailwind-config">try{
-      tailwind.config = {
-        darkMode: "class",
-        theme: {
-          extend: {
-            "colors": {
-                    "on-surface": "#1a1b22",
-                    "on-surface-variant": "#434653",
-                    "on-background": "#1a1b22",
-                    "on-primary": "#ffffff",
-                    "primary": "#0036a3",
-                    "primary-dark": "#00204f",
-                    "surface": "#faf8ff",
-                    "surface-container-low": "#f3f2fd",
-                    "background": "#faf8ff",
-                    "outline-variant": "#c4c5d6",
-                    "error": "#ba1a1a"
+<!DOCTYPE html><html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Espresso Arch | Café de Especialidad en San Isidro, Lima</title>
+    <meta name="description" content="Café de especialidad en San Isidro: granos de origen único, tueste artesanal y ambiente pensado para trabajar o conversar. Ven a probarlo.">
+    <meta name="keywords" content="café de especialidad San Isidro, cafetería nueva en Lima, café de origen único, tueste artesanal Lima, cappuccino artesanal, croissant de mantequilla, café para trabajar San Isidro, cafetería boutique Lima">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&amp;family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=block" rel="stylesheet">
+    <link rel="icon" href="/img/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script><script id="tailwind-config">try{
+          tailwind.config = {
+            darkMode: "class",
+            theme: {
+              extend: {
+                "colors": {
+                        "on-surface": "#1a1b22",
+                        "on-surface-variant": "#434653",
+                        "on-background": "#1a1b22",
+                        "on-primary": "#ffffff",
+                        "primary": "#0036a3",
+                        "primary-dark": "#00204f",
+                        "surface": "#faf8ff",
+                        "surface-container-low": "#f3f2fd",
+                        "background": "#faf8ff",
+                        "outline-variant": "#c4c5d6",
+                        "error": "#ba1a1a"
+                },
+                "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                },
+                "spacing": {
+                        "unit": "8px",
+                        "container-max": "1280px",
+                        "gutter": "24px",
+                        "margin-desktop": "64px",
+                        "margin-mobile": "24px",
+                        "section-gap": "128px"
+                },
+                "fontFamily": {
+                        "headline-lg-mobile": ["Fraunces", "serif"],
+                        "label-md": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "headline-lg": ["Fraunces", "serif"],
+                        "headline-md": ["Fraunces", "serif"],
+                        "display": ["Fraunces", "serif"],
+                        "body-md": ["Inter"]
+                },
+                "fontSize": {
+                        "headline-lg-mobile": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                        "label-md": ["14px", {"lineHeight": "1.4", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                        "label-sm": ["12px", {"lineHeight": "1.4", "fontWeight": "400"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "headline-lg": ["40px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                        "display": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}]
+                }
+              },
             },
-            "borderRadius": {
-                    "DEFAULT": "0.125rem",
-                    "lg": "0.25rem",
-                    "xl": "0.5rem",
-                    "full": "0.75rem"
-            },
-            "spacing": {
-                    "unit": "8px",
-                    "container-max": "1280px",
-                    "gutter": "24px",
-                    "margin-desktop": "64px",
-                    "margin-mobile": "24px",
-                    "section-gap": "128px"
-            },
-            "fontFamily": {
-                    "headline-lg-mobile": ["Fraunces", "serif"],
-                    "label-md": ["Inter"],
-                    "label-sm": ["Inter"],
-                    "body-lg": ["Inter"],
-                    "headline-lg": ["Fraunces", "serif"],
-                    "headline-md": ["Fraunces", "serif"],
-                    "display": ["Fraunces", "serif"],
-                    "body-md": ["Inter"]
-            },
-            "fontSize": {
-                    "headline-lg-mobile": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}],
-                    "label-md": ["14px", {"lineHeight": "1.4", "letterSpacing": "0.05em", "fontWeight": "700"}],
-                    "label-sm": ["12px", {"lineHeight": "1.4", "fontWeight": "400"}],
-                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
-                    "headline-lg": ["40px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "600"}],
-                    "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
-                    "display": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.01em", "fontWeight": "700"}],
-                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}]
-            }
-          },
-        },
-      }
-    }catch(_e){}</script>
-<style>
-  .testimonial-slider-container {
-    overflow: hidden;
-    width: 100%;
-  }
-  .testimonial-track {
-    display: flex;
-    width: 100%;
-    transition: transform 0.5s cubic-bezier(0.65, 0, 0.35, 1);
-  }
-  .testimonial-slide {
-    flex: 0 0 100%;
-    width: 100%;
-  }
-  
-  @keyframes anim-up {
-    from {
-      opacity: 0;
-      transform: translateY(80px);
-    }
-    to {
-      opacity: 1;
-      transform: none;
-    }
-  }
-  
-  @keyframes anim-left {
-    from {
-      opacity: 0;
-      transform: translateX(100px);
-    }
-    to {
-      opacity: 1;
-      transform: none;
-    }
-  }
-  
-  @keyframes anim-right {
-    from {
-      opacity: 0;
-      transform: translateX(-100px);
-    }
-    to {
-      opacity: 1;
-      transform: none;
-    }
-  }
-  
-  [data-anim].is-waiting {
-    opacity: 0;
-  }
-  
-  [data-anim="fade-up"].is-waiting {
-    transform: translateY(80px);
-  }
-  
-  [data-anim="fade-left"].is-waiting {
-    transform: translateX(100px);
-  }
-  
-  [data-anim="fade-right"].is-waiting {
-    transform: translateX(-100px);
-  }
-  
-  [data-anim="fade-up"].is-visible {
-    animation: anim-up 1.2s cubic-bezier(0.16, 1, 0.3, 1) both;
-  }
-  
-  [data-anim="fade-left"].is-visible {
-    animation: anim-left 1.2s cubic-bezier(0.16, 1, 0.3, 1) both;
-  }
-  
-  [data-anim="fade-right"].is-visible {
-    animation: anim-right 1.2s cubic-bezier(0.16, 1, 0.3, 1) both;
-  }
-  
-  [data-anim].is-visible[data-delay="1"] {
-    animation-delay: 130ms;
-  }
-  
-  [data-anim].is-visible[data-delay="2"] {
-    animation-delay: 260ms;
-  }
-  
-  [data-anim].is-visible[data-delay="3"] {
-    animation-delay: 390ms;
-  }
-  
-  /* Input Focus Glow Animation */
-  @keyframes input-glow {
-    0% {
-      box-shadow: 0 0 0 0 rgba(0, 54, 163, 0.4);
-    }
-    50% {
-      box-shadow: 0 0 0 8px rgba(0, 54, 163, 0.2);
-    }
-    100% {
-      box-shadow: 0 0 0 12px rgba(0, 54, 163, 0);
-    }
-  }
-  
-  input:focus,
-  textarea:focus {
-    animation: input-glow 0.6s ease-out;
-  }
-  
-  /* Button Ripple Effect */
-  @keyframes ripple {
-    0% {
-      transform: scale(0);
-      opacity: 1;
-    }
-    100% {
-      transform: scale(4);
-      opacity: 0;
-    }
-  }
-  
-  .btn-ripple {
-    position: relative;
-    overflow: hidden;
-  }
-  
-  .btn-ripple::after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 5px;
-    height: 5px;
-    background: rgba(255, 255, 255, 0.7);
-    border-radius: 50%;
-    transform: translate(-50%, -50%);
-    pointer-events: none;
-  }
-  
-  .btn-ripple:hover::after {
-    animation: ripple 0.6s ease-out;
-  }
-  
-  /* WhatsApp Floating Button */
-  @keyframes pulse-float {
-    0%, 100% {
-      transform: scale(1);
-      box-shadow: 0 4px 12px rgba(0, 54, 163, 0.3);
-    }
-    50% {
-      transform: scale(1.08);
-      box-shadow: 0 8px 20px rgba(0, 54, 163, 0.4);
-    }
-  }
-  
-  .whatsapp-button {
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    width: 56px;
-    height: 56px;
-    background-color: #1a1b22;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    text-decoration: none;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
-    z-index: 40;
-    transition: all 0.3s ease;
-    animation: pulse-float 2s ease-in-out infinite;
-  }
-  
-  .whatsapp-button:hover {
-    transform: scale(1.1);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
-    animation: none;
-  }
-  
-  .whatsapp-button span {
-    color: white;
-    font-size: 28px;
-  }
-  
+          }
+        }catch(_e){}</script>
+    <!-- Open Graph -->
+    <meta property="og:title" content="Espresso Arch | Café de Especialidad en San Isidro, Lima">
+    <meta property="og:description" content="Granos de origen único, tueste artesanal y un espacio pensado para trabajar, conversar o simplemente hacer una pausa. Descubre Espresso Arch en San Isidro.">
+    <meta property="og:image" content="https://lh3.googleusercontent.com/aida-public/AB6AXuCBTa3XU2Or0JWj64t-u3EC4EIkv3E-TxTXtDHWi3eC0-QKs_r7E02Y05AqcPwd3QYVTMnXIb2aA8K3bbgAG050T431_VWuY4dtcCWG_PxVe2oZvXxLtZRSpCIZICGMwAgDIP9ga6yhTbHju9faZeJlfOKplB6Hjrx2i4MpsTlDJtjOimAaKEljQp9CF3kI1FSoCZioXhNwADXGWJ1n57fA5hkn-BZPFqPGqRvGPE8bO6IzdT-WIIoH">  
+    <meta property="og:url" content="https://cafeteria-eight-theta.vercel.app/">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="es_PE">
 
-  @media (max-width: 768px) {
-    .whatsapp-button {
-      bottom: 20px;
-      right: 20px;
-      width: 48px;
-      height: 48px;
-    }
-    
-    .whatsapp-button span {
-      font-size: 24px;
-    }
-  }
-</style>
-</head><body class="font-body-md text-body-md">
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Espresso Arch | Café de Especialidad en San Isidro, Lima">
+    <meta name="twitter:description" content="Granos de origen único, tueste artesanal y un espacio pensado para trabajar, conversar o simplemente hacer una pausa.">
+    <meta name="twitter:image" content="https://cafeteria-eight-theta.vercel.app/og-image.jpg">
+    <style>
+      .testimonial-slider-container {
+        overflow: hidden;
+        width: 100%;
+      }
+      .testimonial-track {
+        display: flex;
+        width: 100%;
+        transition: transform 0.5s cubic-bezier(0.65, 0, 0.35, 1);
+      }
+      .testimonial-slide {
+        flex: 0 0 100%;
+        width: 100%;
+      }
+      
+      @keyframes anim-up {
+        from {
+          opacity: 0;
+          transform: translateY(80px);
+        }
+        to {
+          opacity: 1;
+          transform: none;
+        }
+      }
+      
+      @keyframes anim-left {
+        from {
+          opacity: 0;
+          transform: translateX(100px);
+        }
+        to {
+          opacity: 1;
+          transform: none;
+        }
+      }
+      
+      @keyframes anim-right {
+        from {
+          opacity: 0;
+          transform: translateX(-100px);
+        }
+        to {
+          opacity: 1;
+          transform: none;
+        }
+      }
+      
+      [data-anim].is-waiting {
+        opacity: 0;
+      }
+      
+      [data-anim="fade-up"].is-waiting {
+        transform: translateY(80px);
+      }
+      
+      [data-anim="fade-left"].is-waiting {
+        transform: translateX(100px);
+      }
+      
+      [data-anim="fade-right"].is-waiting {
+        transform: translateX(-100px);
+      }
+      
+      [data-anim="fade-up"].is-visible {
+        animation: anim-up 1.2s cubic-bezier(0.16, 1, 0.3, 1) both;
+      }
+      
+      [data-anim="fade-left"].is-visible {
+        animation: anim-left 1.2s cubic-bezier(0.16, 1, 0.3, 1) both;
+      }
+      
+      [data-anim="fade-right"].is-visible {
+        animation: anim-right 1.2s cubic-bezier(0.16, 1, 0.3, 1) both;
+      }
+      
+      [data-anim].is-visible[data-delay="1"] {
+        animation-delay: 130ms;
+      }
+      
+      [data-anim].is-visible[data-delay="2"] {
+        animation-delay: 260ms;
+      }
+      
+      [data-anim].is-visible[data-delay="3"] {
+        animation-delay: 390ms;
+      }
+      
+      /* Input Focus Glow Animation */
+      @keyframes input-glow {
+        0% {
+          box-shadow: 0 0 0 0 rgba(0, 54, 163, 0.4);
+        }
+        50% {
+          box-shadow: 0 0 0 8px rgba(0, 54, 163, 0.2);
+        }
+        100% {
+          box-shadow: 0 0 0 12px rgba(0, 54, 163, 0);
+        }
+      }
+      
+      input:focus,
+      textarea:focus {
+        animation: input-glow 0.6s ease-out;
+      }
+      
+      /* Button Ripple Effect */
+      @keyframes ripple {
+        0% {
+          transform: scale(0);
+          opacity: 1;
+        }
+        100% {
+          transform: scale(4);
+          opacity: 0;
+        }
+      }
+      
+      .btn-ripple {
+        position: relative;
+        overflow: hidden;
+      }
+      
+      .btn-ripple::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 5px;
+        height: 5px;
+        background: rgba(255, 255, 255, 0.7);
+        border-radius: 50%;
+        transform: translate(-50%, -50%);
+        pointer-events: none;
+      }
+      
+      .btn-ripple:hover::after {
+        animation: ripple 0.6s ease-out;
+      }
+      
+      /* WhatsApp Floating Button */
+      @keyframes pulse-float {
+        0%, 100% {
+          transform: scale(1);
+          box-shadow: 0 4px 12px rgba(0, 54, 163, 0.3);
+        }
+        50% {
+          transform: scale(1.08);
+          box-shadow: 0 8px 20px rgba(0, 54, 163, 0.4);
+        }
+      }
+      
+      .whatsapp-button {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        width: 56px;
+        height: 56px;
+        background-color: #1a1b22;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        text-decoration: none;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+        z-index: 40;
+        transition: all 0.3s ease;
+        animation: pulse-float 2s ease-in-out infinite;
+      }
+      
+      .whatsapp-button:hover {
+        transform: scale(1.1);
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+        animation: none;
+      }
+      
+      .whatsapp-button span {
+        color: white;
+        font-size: 28px;
+      }
+      
+
+      @media (max-width: 768px) {
+        .whatsapp-button {
+          bottom: 20px;
+          right: 20px;
+          width: 48px;
+          height: 48px;
+        }
+        
+        .whatsapp-button span {
+          font-size: 24px;
+        }
+      }
+    </style>
+  </head>
+<body class="font-body-md text-body-md">
 <!-- TopNavBar -->
 <nav class="w-full sticky top-0 z-50 bg-surface border-b border-outline-variant">
 <div class="flex justify-between items-center h-20 px-margin-desktop max-w-container-max mx-auto">
